@@ -1,5 +1,6 @@
 ﻿int a = 1;
 
-a = a * ++a;
+a = a * a++;
 
 Console.WriteLine(a);
+
