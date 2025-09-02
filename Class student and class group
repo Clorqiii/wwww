@@ -1,0 +1,87 @@
+using ConsoleApp2;
+using System;
+
+public class MainClass
+{
+    public static void Main()
+    {
+        List<Student> students = new List<Student>();
+        List<Group> groups = new List<Group>();
+
+        while (true)
+        {
+            Console.WriteLine("\n1. Добавить студента.");
+            Console.WriteLine("2. Показать всех студентов.");
+            Console.WriteLine("3. Добавить номер группы.");
+            Console.WriteLine("4. Список групп");
+            Console.WriteLine("5. Выход.");
+            Console.Write("Выберите действие ");
+
+            string choice = Console.ReadLine();
+
+            switch(choice)
+            {
+                case "1":
+                    {
+                        Console.Write("Введите имя: ");
+                        string name = Console.ReadLine();
+
+                        Console.WriteLine("Введите группу: ");
+                        string group = Console.ReadLine();
+
+                        Student student = new Student(name, group);
+                        students.Add(student);
+
+                        Console.WriteLine($"\nДобавлен студент: {student}");
+                    }
+                    break;
+
+                case "2":
+                    {
+                        Console.WriteLine("\nСписок студентов: ");
+                        foreach (var s in students)
+                        {
+                            Console.WriteLine(s);
+                        }
+                    }
+                    break;
+
+                case "5":
+                    {
+                        return;
+                    }
+
+                default:
+                    {
+                        Console.WriteLine("Неверный выбор!");
+                    }
+                    break;
+
+                case "3":
+                    {
+                        Console.Write("Введите номер группы: ");
+                        string number = Console.ReadLine();
+
+                        Console.WriteLine("Введите имя преподователя: ");
+                        string teacher = Console.ReadLine();
+
+                        Group group = new Group(number, teacher);
+                        groups.Add(group);
+
+                        Console.WriteLine($"\nДобавлен номер группы: {number}. Имя учителя: {teacher}.");
+                    }
+                    break;
+
+                case "4":
+                    {
+                        Console.WriteLine("\nСписок групп: ");
+                        foreach(var s in groups)
+                        {
+                            Console.WriteLine(s);
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+}
