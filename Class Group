@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp2
+{
+    internal class Group
+    {
+        private static int nextId1 = 1;
+
+        public int Id1 { get; private set; }
+
+        public string Number { get; private set; }
+
+        public string Teacher { get; set; }
+
+        public Group(string number, string teacher)
+        {
+            Id1 = nextId1++;
+            Number = number;
+            Teacher = teacher;
+        }
+
+        public override string ToString() => $"ID: {Id1}, Номер группы: {Number}, Преподователь: {Teacher}";
+    }
+}
+
+
+
