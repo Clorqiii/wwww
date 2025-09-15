@@ -1,0 +1,17 @@
+using System;
+
+public class MainClass()
+{
+  static void Main()
+  {
+    Random rand = new Random();
+    int value = rand.Next(0, 11);
+
+    while(true)
+      {
+          int value = rand.Next(0, 11);
+          Console.WriteLine(value);
+          Console.ReadKey();
+      }
+  }
+}
