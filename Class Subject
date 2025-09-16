@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MainClass;
 
 namespace ConsoleApp2
 {
     internal class Subject
     {
-        private static int nextId2 = 1;
 
-        public int Id2 { get; private set; }
+        public int Id { get; private set; }
 
-        public string Subjectt { get; private set; }
+        public string SubjectName { get; private set; }
 
         public string Teacher1 { get; set; }
 
-        public Subject(string subject, string teacher1)
+        public Subject(string subjectName, string teacher1)
         {
-            Id2 = nextId2++;
-            Subjectt = subject;
+            Id = IdGenerator.GetNextId();
+            SubjectName = subjectName;
             Teacher1 = teacher1;
         }
 
-        public override string ToString() => $"ID: {Id2}, Предмет: {Subjectt}";
+        public override string ToString() => $"ID: {Id}, Предмет: {SubjectName}";
     }
 }
