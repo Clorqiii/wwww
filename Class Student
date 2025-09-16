@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static MainClass;
 
 namespace ConsoleApp2
 {
     internal class Student
     {
-        private static int nextId = 1;
 
         public int Id { get; private set; }
 
@@ -18,7 +18,7 @@ namespace ConsoleApp2
 
         public Student(string name, string group)
         {
-            Id = nextId++;
+            Id = IdGenerator.GetNextId();
             Name = name;
             Group = group;
         }
@@ -26,6 +26,7 @@ namespace ConsoleApp2
         public override string ToString() => $"ID: {Id}, Имя: {Name}, Группа: {Group}";
     }
 }
+
 
 
 
